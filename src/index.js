@@ -161,7 +161,7 @@ export default {
 		const chunkSize = 10;
 		for (let i = 0; i < holdedOrderNumbers.length; i += chunkSize) {
 			const chunk = holdedOrderNumbers.slice(i, i + chunkSize);
-			const messageText = `📦 Holded orders within last 30 days (${i + 1}-${i + chunk.length} of ${
+			const messageText = `📦 On Hold orders within last 30 days (${i + 1}-${i + chunk.length} of ${
 				holdedOrderNumbers.length
 			}):\n${chunk.join(', ')}`;
 			await sendToCliq(cliqWebhookUrl, messageText);
