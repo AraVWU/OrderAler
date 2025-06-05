@@ -5,15 +5,18 @@
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
 	"name": "order-process-alert",
+	"vars": {
+		"MAGENTO_HOST": "https://vapewholesaleusa.com",
+		"ZOHO_CLIQ_API_ENDPOINT": "https://cliq.zoho.com/company/729741306/api/v2/bots/orderalertbot/message",
+		"ZOHO_CLIQ_BOTNAME": "orderalertbot"
+	},
 	"main": "src/index.js",
 	"compatibility_date": "2025-06-04",
 	"observability": {
 		"enabled": true
 	},
 	"triggers": {
-		"crons": [
-			"* * * * *"
-		]
+		"crons": ["0 4 * * *", "0 5 * * *"]
 	}
 	/**
 	 * Smart Placement
