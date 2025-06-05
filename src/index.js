@@ -43,9 +43,9 @@ export default {
 			console.log('Cliq response:', responseString);
 		}
 
-		// Build the webhook URL
 		const cliqWebhookUrl = `${ZOHO_CLIQ_API_ENDPOINT}?zapikey=${ZOHO_CLIQ_WEBHOOK_TOKEN}`;
 
+		/*
 		// --- Processing orders from yesterday, grand_total > 500 ---
 		const yesterday = new Date(now.getTime() - 24 * 60 * 60 * 1000);
 		const startOfDay = new Date(yesterday.setHours(0, 0, 0, 0)).toISOString();
@@ -111,6 +111,7 @@ export default {
 			await sendToCliq(cliqWebhookUrl, messageText);
 			await new Promise((resolve) => setTimeout(resolve, 1000));
 		}
+		*/
 
 		// --- Holded orders from last 30 days ---
 		currentPage = 1;
@@ -157,6 +158,7 @@ export default {
 		const holdedOrderNumbers = allOrders.map((order) => order.increment_id);
 		console.log('Holded Order Numbers:', holdedOrderNumbers);
 
+		const chunkSize = 10;
 		for (let i = 0; i < holdedOrderNumbers.length; i += chunkSize) {
 			const chunk = holdedOrderNumbers.slice(i, i + chunkSize);
 			const messageText = `📦 Holded orders within last 30 days (${i + 1}-${i + chunk.length} of ${
