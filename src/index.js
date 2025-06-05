@@ -48,7 +48,7 @@ export default {
 		// Build the webhook URL
 		const cliqWebhookUrl = `${ZOHO_CLIQ_API_ENDPOINT}?zapikey=${ZOHO_CLIQ_WEBHOOK_TOKEN}`;
 
-		if (event.cron === '0 4 * * *') {
+		if (event.cron === '0 16 * * *') {
 			// Calculate yesterday's date range in UTC (00:00:00 to 23:59:59)
 			const yesterday = new Date(now.getTime() - 24 * 60 * 60 * 1000);
 			const startOfDay = new Date(yesterday.setHours(0, 0, 0, 0)).toISOString();
@@ -121,7 +121,7 @@ export default {
 				await sendToCliq(cliqWebhookUrl, messageText);
 				await new Promise((resolve) => setTimeout(resolve, 1000)); // 1 second delay to avoid rate limit
 			}
-		} else if (event.cron === '0 5 * * *') {
+		} else if (event.cron === '1 16 * * *') {
 			// Fetch holded orders within the last 7 days
 			currentPage = 1;
 			allOrders = [];
