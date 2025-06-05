@@ -43,7 +43,7 @@ export default {
 			console.log('Cliq response:', responseString);
 		}
 
-		const cliqWebhookUrl = `${ZOHO_CLIQ_API_ENDPOINT}?zapikey=${ZOHO_CLIQ_WEBHOOK_TOKEN}`;
+		const cliqWebhookUrl = `${ZOHO_CLIQ_API_ENDPOINT}?zapikey=${ZOHO_CLIQ_WEBHOOK_TOKEN}&bot_unique_name=${env.ZOHO_CLIQ_BOTNAME}`;
 
 		/*
 		// --- Processing orders from yesterday, grand_total > 500 ---

@@ -7,7 +7,7 @@
 	"name": "order-process-alert",
 	"vars": {
 		"MAGENTO_HOST": "https://vapewholesaleusa.com",
-		"ZOHO_CLIQ_API_ENDPOINT": "https://cliq.zoho.com/company/729741306/api/v2/bots/orderalertbot/message",
+		"ZOHO_CLIQ_API_ENDPOINT": "https://cliq.zoho.com/company/729741306/api/v2/channelsbyname/orderprocessalert/message",
 		"ZOHO_CLIQ_BOTNAME": "orderalertbot"
 	},
 	"main": "src/index.js",
