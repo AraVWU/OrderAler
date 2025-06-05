@@ -16,7 +16,7 @@
 		"enabled": true
 	},
 	"triggers": {
-		"crons": ["0 16 * * *", "1 16 * * *"]
+		"crons": ["0 16 * * *"]
 	}
 	/**
 	 * Smart Placement
